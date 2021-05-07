@@ -31,6 +31,7 @@ const Header = (title, date, temp) => {
   span1.textContent = date;
   h1.textContent = title;
   span2.textContent = temp;
+return div;
 }
 
 
@@ -44,7 +45,10 @@ const Header = (title, date, temp) => {
 
 
 function headerAppender(selector){
- 
+  let y = Header("Okaaayyyyyyyy", "today, 2021", "89F")
+  let y2 = document.querySelector(selector);
+  y2.appendChild(y);
+return y
 }
 
 
