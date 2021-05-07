@@ -24,6 +24,9 @@ const Tabs = (topics) => {
   })
 return (div1)
 }
+
+// I used this code below to test the function above.
+
 // let testA = ["JS", "CSS", "HTML", "Python", "React"]
 // console.log(Tabs(testA))
 
@@ -36,6 +39,8 @@ return (div1)
 // Find the array of topics inside the response, and create the tabs using the Tabs component.
 // Append the tabs to the element in the DOM that matches the selector passed to the function.
 //
+
+// Imported axios to use below
 import axios from 'axios';
 
 const tabsAppender = (selector) => {
@@ -55,6 +60,8 @@ const tabsAppender = (selector) => {
       var4.appendChild(response)
     })
 }
+
+// The code below was just used to test that the code above.
 
 // console.log(tabsAppender(".tabs-container"));
 // console.log(document)

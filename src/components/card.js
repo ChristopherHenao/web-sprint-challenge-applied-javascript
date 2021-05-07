@@ -18,6 +18,7 @@
 //
 
 const Card = (article) => {
+  // Created the elements
   let cardDiv = document.createElement("div");
   let headLineDiv = document.createElement("div");
   let authorDiv = document.createElement("div");
@@ -25,15 +26,18 @@ const Card = (article) => {
   let img1 = document.createElement("img");
   let nameDiv = document.createElement("span");
 
+  // Added classes to the elements 
   cardDiv.classList.add("card");
   headLineDiv.classList.add("headline");
   authorDiv.classList.add("author");
   imgDiv.classList.add("img-container");
 
+  // Added the content to the elements
   headLineDiv.textContent = article.headline;
   img1.src = article.authorPhoto;
   nameDiv.textContent = article.authorName;
 
+  // Appended the elements 
   document.querySelector(".cards-container").appendChild(cardDiv);
   cardDiv.appendChild(headLineDiv);
   cardDiv.appendChild(authorDiv);
@@ -41,6 +45,7 @@ const Card = (article) => {
   authorDiv.appendChild(nameDiv);
   imgDiv.appendChild(img1);
 
+  // Added the event listener
   cardDiv.addEventListener("click", (event) => {
     console.log(headLineDiv);
   })
@@ -63,6 +68,8 @@ const Card = (article) => {
 // Create a card from each and every article object in the response, using the Card component.
 // Append each card to the element in the DOM that matches the selector passed to the function.
 //
+
+// Imported axios to use below
 import axios from 'axios';
 
 
@@ -85,11 +92,13 @@ const cardAppender = (selector) => {
 
 
 // I made both of the functions below to make the promise above be simpler
+// This function runs through the array and applies the Card function and cb function to it. It was called inside the promise.
 function rA (array){
   array.forEach(item => {
     return Card(cb(item))
   })}
 
+// This function makes a new object with the info necessary to make the cards on the page
 function cb(item){
   const example = {
     headline: "Test Headline",
