@@ -45,20 +45,70 @@ const Card = (article) => {
     console.log(headLineDiv);
   })
 }
-Card({
-  headline: "Test Headline",
-  authorPhoto: "url",
-  authorName: "Christopher Henao"
-})
+
+            // Testing out my code above
+// Card({
+//   headline: "Test Headline",
+//   authorPhoto: "url",
+//   authorName: "Christopher Henao"
+// })
+
+
+
+// TASK 6
+// ---------------------
+// Implement this function that takes a css selector as its only argument.
+// It should obtain articles from this endpoint: `https://lambda-times-api.herokuapp.com/articles`
+// However, the articles do not come organized in a single, neat array. Inspect the response closely!
+// Create a card from each and every article object in the response, using the Card component.
+// Append each card to the element in the DOM that matches the selector passed to the function.
+//
+import axios from 'axios';
+
+
 const cardAppender = (selector) => {
-  // TASK 6
-  // ---------------------
-  // Implement this function that takes a css selector as its only argument.
-  // It should obtain articles from this endpoint: `https://lambda-times-api.herokuapp.com/articles`
-  // However, the articles do not come organized in a single, neat array. Inspect the response closely!
-  // Create a card from each and every article object in the response, using the Card component.
-  // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-}
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then(response => {
+        return (response.data.articles)
+    })
+    .catch( err => {
+        console.log(`Error: ${err}`)
+    })
+    .then(response => {
+      rA(response.bootstrap);
+      rA(response.javascript);
+      rA(response.jquery);
+      rA(response.node);
+      rA(response.technology)
+    })
+}   
+
+
+// I made both of the functions below to make the promise above be simpler
+function rA (array){
+  array.forEach(item => {
+    return Card(cb(item))
+  })}
+
+function cb(item){
+  const example = {
+    headline: "Test Headline",
+    authorPhoto: "url",
+    authorName: "Christopher Henao"
+    }
+  
+    let me = Object.create(example);
+  
+  me.headline = item.headline;
+  me.authorPhoto = item.authorPhoto;
+  me.authorName = item.authorName;
+return me;  
+};
+  
+  
+
+
+
+
 
 export { Card, cardAppender }
