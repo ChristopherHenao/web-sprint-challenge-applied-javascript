@@ -56,6 +56,7 @@ const tabsAppender = (selector) => {
     })
 }
 
-console.log(tabsAppender(".tabs-container"));
-console.log(document)
+// console.log(tabsAppender(".tabs-container"));
+// console.log(document)
+
 export { Tabs, tabsAppender }
