@@ -42,8 +42,15 @@ const Header = (title, date, temp) => {
 // It should append the header to the element in the DOM that matches the given selector.
 //
 const headerAppender = (selector) => {
-  selector.appendChild(Header("This is a test title", "May 7, 2021", "57F"));
+  let var1 = Header("This is a test title", "May 7, 2021", "57F");
+  let var2 = document.querySelector(`${selector}`);
+  console.log(var1);
+  console.log(var2);
+  var2.appendChild(var1);
+  // console.log(var1);
+  // console.log(var2);
+  // return var1;
 }
-
+// document.querySelector(`${selector}`).appendChild(Header("This is a test title", "May 7, 2021", "57F"));
 
 export { Header, headerAppender }
