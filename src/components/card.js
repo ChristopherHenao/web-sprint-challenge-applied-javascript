@@ -69,8 +69,8 @@ const cardAppender = (selector) => {
 
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
-.then(response => {
-  const articles = (response.data.articles);
+.then(res => {
+  const articles = (res.data.articles);
   return articles;
 })
 .then(res => {
