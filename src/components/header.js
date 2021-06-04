@@ -32,7 +32,6 @@ const Header = (title, date, temp) => {
 return headerDiv
 }
 
-console.log(Header("this is a test title", "today, 2021", "91F"))
 
 
 const headerAppender = (selector) => {
